@@ -8,6 +8,6 @@
 * Для установки gulp достаточно выполнить команду 
 > npm install -- global gulp
 
-## Для старата проекта необходимо 
+## Для старата проекта необходимо:
 * Склонировать репозиторий 
 > git clone https://github.com/depharm/first-landing.git 
