@@ -33,12 +33,13 @@ gulp.task('sass:com', function () {
 });
 
 /*------ Sprite ------*/
-gulp.task('sprite', function () {
+gulp.task('sprite', function (cb) {
    const spriteData = gulp.src('source/images/icons/*.png').pipe(spritesmith({
         imgName: 'sprite.png',
         imgPath: '../images/sprite.png',
         cssName: 'sprite.scss'
     }));
+
     spriteData.img.pipe(gulp.dest('build/images/'));
     spriteData.css.pipe(gulp.dest('source/styles/global/'));
     cb();
@@ -73,7 +74,7 @@ gulp.task('watch', function () {
 /*------ Watchers ------*/
 gulp.task('default', gulp.series(
     'clean',
-    gulp.parallel('pug:com', 'sass:com', 'sprite', 'copy')),
+    gulp.parallel('pug:com', 'sass:com', 'sprite', 'copy'),
     gulp.parallel('watch', 'server')
 )
 );
